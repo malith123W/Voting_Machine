@@ -1,0 +1,123 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000225a7522740 .scope module, "voteLogger" "voteLogger" 2 2;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clock";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "mode";
+    .port_info 3 /INPUT 1 "cand1_vote_valid";
+    .port_info 4 /INPUT 1 "cand2_vote_valid";
+    .port_info 5 /INPUT 1 "cand3_vote_valid";
+    .port_info 6 /INPUT 1 "cand4_vote_valid";
+    .port_info 7 /OUTPUT 8 "cand1_vote_recvd";
+    .port_info 8 /OUTPUT 8 "cand2_vote_recvd";
+    .port_info 9 /OUTPUT 8 "cand3_vote_recvd";
+    .port_info 10 /OUTPUT 8 "cand4_vote_recvd";
+v00000225a7522e10_0 .var "cand1_vote_recvd", 7 0;
+o00000225a7557008 .functor BUFZ 1, C4<z>; HiZ drive
+v00000225a75228d0_0 .net "cand1_vote_valid", 0 0, o00000225a7557008;  0 drivers
+v00000225a7522970_0 .var "cand2_vote_recvd", 7 0;
+o00000225a7557068 .functor BUFZ 1, C4<z>; HiZ drive
+v00000225a7522a10_0 .net "cand2_vote_valid", 0 0, o00000225a7557068;  0 drivers
+v00000225a7522ab0_0 .var "cand3_vote_recvd", 7 0;
+o00000225a75570c8 .functor BUFZ 1, C4<z>; HiZ drive
+v00000225a7522b50_0 .net "cand3_vote_valid", 0 0, o00000225a75570c8;  0 drivers
+v00000225a75531a0_0 .var "cand4_vote_recvd", 7 0;
+o00000225a7557128 .functor BUFZ 1, C4<z>; HiZ drive
+v00000225a7553240_0 .net "cand4_vote_valid", 0 0, o00000225a7557128;  0 drivers
+o00000225a7557158 .functor BUFZ 1, C4<z>; HiZ drive
+v00000225a75532e0_0 .net "clock", 0 0, o00000225a7557158;  0 drivers
+o00000225a7557188 .functor BUFZ 1, C4<z>; HiZ drive
+v00000225a7553410_0 .net "mode", 0 0, o00000225a7557188;  0 drivers
+o00000225a75571b8 .functor BUFZ 1, C4<z>; HiZ drive
+v00000225a75534b0_0 .net "reset", 0 0, o00000225a75571b8;  0 drivers
+E_00000225a766af60 .event posedge, v00000225a75532e0_0;
+    .scope S_00000225a7522740;
+T_0 ;
+    %wait E_00000225a766af60;
+    %load/vec4 v00000225a75534b0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v00000225a7522e10_0, 0;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v00000225a7522970_0, 0;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v00000225a7522ab0_0, 0;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v00000225a75531a0_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v00000225a75228d0_0;
+    %load/vec4 v00000225a7553410_0;
+    %pad/u 32;
+    %pushi/vec4 0, 0, 32;
+    %cmp/e;
+    %flag_get/vec4 4;
+    %and;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.2, 8;
+    %load/vec4 v00000225a7522e10_0;
+    %addi 1, 0, 8;
+    %assign/vec4 v00000225a7522e10_0, 0;
+    %jmp T_0.3;
+T_0.2 ;
+    %load/vec4 v00000225a7522a10_0;
+    %load/vec4 v00000225a7553410_0;
+    %pad/u 32;
+    %pushi/vec4 0, 0, 32;
+    %cmp/e;
+    %flag_get/vec4 4;
+    %and;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.4, 8;
+    %load/vec4 v00000225a7522970_0;
+    %addi 1, 0, 8;
+    %assign/vec4 v00000225a7522970_0, 0;
+    %jmp T_0.5;
+T_0.4 ;
+    %load/vec4 v00000225a7522b50_0;
+    %load/vec4 v00000225a7553410_0;
+    %pad/u 32;
+    %pushi/vec4 0, 0, 32;
+    %cmp/e;
+    %flag_get/vec4 4;
+    %and;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.6, 8;
+    %load/vec4 v00000225a7522ab0_0;
+    %addi 1, 0, 8;
+    %assign/vec4 v00000225a7522ab0_0, 0;
+    %jmp T_0.7;
+T_0.6 ;
+    %load/vec4 v00000225a7553240_0;
+    %load/vec4 v00000225a7553410_0;
+    %pad/u 32;
+    %pushi/vec4 0, 0, 32;
+    %cmp/e;
+    %flag_get/vec4 4;
+    %and;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.8, 8;
+    %load/vec4 v00000225a75531a0_0;
+    %addi 1, 0, 8;
+    %assign/vec4 v00000225a75531a0_0, 0;
+T_0.8 ;
+T_0.7 ;
+T_0.5 ;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "votelogger.v";
