@@ -6,9 +6,9 @@ input button,
 output reg valid_vote
 );
 
-reg [30:0] counter;
+reg [30:0] counter; // 31 bits to count up to 100000000
 
-//1 sec / 10ms = 100000000
+// 1 sec / 10ms = 100000000
 
 always @(posedge clock)
 begin

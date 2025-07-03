@@ -24,7 +24,7 @@ begin
         counter <= 0;   //Whenever reset is pressed, counter started from 0
     else if(valid_vote_casted) //If a valid vote is casted, counter becomes 1
         counter <= counter + 1;
-    else if(counter !=0 & counter < 100000000)//If counter is not 0, increment it till 100000000
+    else if((counter !=0) && (counter < 100000000))//If counter is not 0, increment it till 100000000
         counter <= counter + 1;
     else //Once counter becomes 100000000, reset it to zero
         counter <= 0;
