@@ -1,0 +1,330 @@
+Analysis & Synthesis report for Voting_Machine
+Fri Jul 04 12:44:53 2025
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Jul 04 12:44:53 2025       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; Voting_Machine                              ;
+; Top-level Entity Name           ; Voting_Machine                              ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 174                                         ;
+; Total pins                      ; 15                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7D6F27C7     ;                    ;
+; Top-level entity name                                                           ; Voting_Machine     ; Voting_Machine     ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                              ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+; voting_machine.v                 ; yes             ; User Verilog HDL File  ; C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 135         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 232         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 38          ;
+;     -- 5 input functions                    ; 7           ;
+;     -- 4 input functions                    ; 12          ;
+;     -- <=3 input functions                  ; 175         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 174         ;
+;                                             ;             ;
+; I/O pins                                    ; 15          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 174         ;
+; Total fan-out                               ; 1386        ;
+; Average fan-out                             ; 3.18        ;
++---------------------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                     ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+----------------+--------------+
+; |Voting_Machine            ; 232 (0)             ; 174 (0)                   ; 0                 ; 0          ; 15   ; 0            ; |Voting_Machine                   ; Voting_Machine ; work         ;
+;    |buttonControl:bc1|     ; 37 (37)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc1 ; buttonControl  ; work         ;
+;    |buttonControl:bc2|     ; 37 (37)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc2 ; buttonControl  ; work         ;
+;    |buttonControl:bc3|     ; 37 (37)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc3 ; buttonControl  ; work         ;
+;    |buttonControl:bc4|     ; 37 (37)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc4 ; buttonControl  ; work         ;
+;    |modeControl:MC|        ; 48 (48)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|modeControl:MC    ; modeControl    ; work         ;
+;    |voteLogger:VL|         ; 36 (36)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|voteLogger:VL     ; voteLogger     ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 174   ;
+; Number of registers using Synchronous Clear  ; 174   ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 162   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Voting_Machine|voteLogger:VL|cand4_vote_recvd[7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Voting_Machine|voteLogger:VL|cand3_vote_recvd[7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Voting_Machine|voteLogger:VL|cand2_vote_recvd[7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Voting_Machine|voteLogger:VL|cand1_vote_recvd[7] ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc4|counter[9]      ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc3|counter[4]      ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc2|counter[2]      ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc1|counter[9]      ;
+; 6:1                ; 26 bits   ; 104 LEs       ; 26 LEs               ; 78 LEs                 ; Yes        ; |Voting_Machine|modeControl:MC|counter[22]        ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |Voting_Machine|modeControl:MC|leds[2]            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 174                         ;
+;     ENA SCLR          ; 162                         ;
+;     SCLR              ; 4                           ;
+;     SCLR SLD          ; 8                           ;
+; arriav_lcell_comb     ; 232                         ;
+;     arith             ; 162                         ;
+;         1 data inputs ; 158                         ;
+;         2 data inputs ; 4                           ;
+;     normal            ; 70                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 12                          ;
+;         5 data inputs ; 7                           ;
+;         6 data inputs ; 38                          ;
+; boundary_port         ; 15                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.50                        ;
+; Average LUT depth     ; 2.53                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri Jul 04 12:44:38 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Voting_Machine -c Voting_Machine
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 4 design units, including 4 entities, in source file voting_machine.v
+    Info (12023): Found entity 1: buttonControl File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 5
+    Info (12023): Found entity 2: voteLogger File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 39
+    Info (12023): Found entity 3: modeControl File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 74
+    Info (12023): Found entity 4: Voting_Machine File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 140
+Info (12127): Elaborating entity "Voting_Machine" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at voting_machine.v(159): object "anyValidVote" assigned a value but never read File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 159
+Info (12128): Elaborating entity "buttonControl" for hierarchy "buttonControl:bc1" File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 168
+Warning (10230): Verilog HDL assignment warning at voting_machine.v(18): truncated value with size 32 to match size of target (26) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 18
+Info (12128): Elaborating entity "voteLogger" for hierarchy "voteLogger:VL" File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 203
+Warning (10230): Verilog HDL assignment warning at voting_machine.v(60): truncated value with size 32 to match size of target (8) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 60
+Warning (10230): Verilog HDL assignment warning at voting_machine.v(62): truncated value with size 32 to match size of target (8) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 62
+Warning (10230): Verilog HDL assignment warning at voting_machine.v(64): truncated value with size 32 to match size of target (8) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 64
+Warning (10230): Verilog HDL assignment warning at voting_machine.v(66): truncated value with size 32 to match size of target (8) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 66
+Info (12128): Elaborating entity "modeControl" for hierarchy "modeControl:MC" File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 218
+Warning (10230): Verilog HDL assignment warning at voting_machine.v(102): truncated value with size 32 to match size of target (26) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 102
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 247 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 232 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4903 megabytes
+    Info: Processing ended: Fri Jul 04 12:44:53 2025
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:39
+
+
