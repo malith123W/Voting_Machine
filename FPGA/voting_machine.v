@@ -8,7 +8,7 @@ module buttonControl(
     input button_n,              // Active low button input for voting
     output reg valid_vote        // Output: high for one clock when a valid vote is detected
 );
-    reg [26:0] counter;          // Counter to measure button press duration
+    reg [25:0] counter;          // Counter to measure button press duration
 
     always @(posedge clock) begin // Trigger on rising edge of clock
         if (!reset_n)             // If reset_n is low (reset active)
@@ -75,54 +75,64 @@ module modeControl(
     input clock,                      // System clock input
     input reset_n,                    // Active low synchronous reset input
     input mode,                       // Mode: 0 = voting, 1 = result display
-    input valid_vote_casted,          // High for one clock when any valid vote is cast
     input [7:0] candidate1_vote,      // Vote count for candidate 1
     input [7:0] candidate2_vote,      // Vote count for candidate 2
     input [7:0] candidate3_vote,      // Vote count for candidate 3
     input [7:0] candidate4_vote,      // Vote count for candidate 4
-    input candidate1_button_press,    // Button press for candidate 1 (for result display)
-    input candidate2_button_press,    // Button press for candidate 2 (for result display)
-    input candidate3_button_press,    // Button press for candidate 3 (for result display)
-    input candidate4_button_press,    // Button press for candidate 4 (for result display)
+    input candidate1_button_press,    // Button press for candidate 1 (active high)
+    input candidate2_button_press,    // Button press for candidate 2 (active high)
+    input candidate3_button_press,    // Button press for candidate 3 (active high)
+    input candidate4_button_press,    // Button press for candidate 4 (active high)
     output reg [7:0] leds             // Output: 8-bit LED display
 );
-    reg [26:0] counter;               // Counter for feedback timing for clock signal 50MHz
+    reg [25:0] counter; // 26 bits is enough for 50 million
+    wire any_button_pressed;
 
-    always @(posedge clock) begin     // Trigger on rising edge of clock
-        if (!reset_n)                 // If reset_n is low (reset active)
-            counter <= 0;             //   Reset counter
-        else if (valid_vote_casted)   // If a valid vote was just cast
-            counter <= 1;             //   Start feedback counter
-        else if (counter > 0 && counter < 50000000) // If counter active and not maxed
-            counter <= counter + 1;   //   Increment counter
-        else
-            counter <= 0;             //   Otherwise, reset counter
-    end    
+    assign any_button_pressed = candidate1_button_press | candidate2_button_press |
+                               candidate3_button_press | candidate4_button_press;
 
-    always @(posedge clock) begin     // Trigger on rising edge of clock
-        if (!reset_n)                 // If reset_n is low (reset active)
-            leds <= 0;                //   Turn off all LEDs
-        else begin
-            if (mode == 0) begin          // If in voting mode
-                if (counter > 0)          //   If feedback counter active
-                    leds <= 8'hFF;        //     Turn on all LEDs for feedback
-                else
-                    leds <= 8'h00;        //     Otherwise, turn off all LEDs
-            end else begin                // Else, in result mode
-                if (candidate1_button_press)       //   If candidate 1's button is pressed
-                    leds <= candidate1_vote;       //     Show candidate 1's vote count
-                else if (candidate2_button_press)  //   Else if candidate 2's button is pressed
-                    leds <= candidate2_vote;       //     Show candidate 2's vote count
-                else if (candidate3_button_press)  //   Else if candidate 3's button is pressed
-                    leds <= candidate3_vote;       //     Show candidate 3's vote count
-                else if (candidate4_button_press)  //   Else if candidate 4's button is pressed
-                    leds <= candidate4_vote;       //     Show candidate 4's vote count
-                else
-                    leds <= 8'h00;                 //     Otherwise, turn off all LEDs
+    always @(posedge clock) begin
+        if (!reset_n) begin
+            counter <= 0;
+        end else if (mode == 0) begin
+            if (any_button_pressed) begin
+                if (counter == 0)
+                    counter <= 1; // Start counter on button press
+                else if (counter < 50000000)
+                    counter <= counter + 1;
+                // else counter holds at max value until button released
+            end else begin
+                counter <= 0; // Reset counter when no button is pressed
             end
-        end  
+        end else begin
+            counter <= 0; // Reset counter in result mode
+        end
+    end
+
+    always @(posedge clock) begin
+        if (!reset_n) begin
+            leds <= 8'h00;
+        end else if (mode == 0) begin
+            if (any_button_pressed && counter <= 50000000)
+                leds <= 8'hFF; // All LEDs on immediately when button pressed, for 1 second
+            else
+                leds <= 8'h00; // LEDs off after 1 second or if no button pressed
+        end else begin
+            // Result display mode logic
+            if (candidate1_button_press)
+                leds <= candidate1_vote;
+            else if (candidate2_button_press)
+                leds <= candidate2_vote;
+            else if (candidate3_button_press)
+                leds <= candidate3_vote;
+            else if (candidate4_button_press)
+                leds <= candidate4_vote;
+            else
+                leds <= 8'h00;
+        end
     end
 endmodule
+
 
 
 
@@ -196,7 +206,6 @@ module Voting_Machine(
         .clock(clock),
         .reset_n(reset_n),
         .mode(mode),
-        .valid_vote_casted(anyValidVote),
         .candidate1_vote(cand1_vote_recvd),
         .candidate2_vote(cand2_vote_recvd),
         .candidate3_vote(cand3_vote_recvd),

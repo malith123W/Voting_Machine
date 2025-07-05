@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Jul 03 22:49:34 2025
+Fitter Status : Successful - Fri Jul 04 12:46:34 2025
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Voting_Machine
 Top-level Entity Name : Voting_Machine
 Family : Cyclone V
 Device : 5CGXFC7D6F27C7
 Timing Models : Final
-Logic utilization (in ALMs) : 152 / 56,480 ( < 1 % )
-Total registers : 179
+Logic utilization (in ALMs) : 136 / 56,480 ( < 1 % )
+Total registers : 174
 Total pins : 15 / 378 ( 4 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 7,024,640 ( 0 % )

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Voting_Machine
-Thu Jul 03 22:48:45 2025
+Fri Jul 04 12:44:53 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -44,13 +44,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jul 03 22:48:45 2025       ;
+; Analysis & Synthesis Status     ; Successful - Fri Jul 04 12:44:53 2025       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; Voting_Machine                              ;
 ; Top-level Entity Name           ; Voting_Machine                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 179                                         ;
+; Total registers                 ; 174                                         ;
 ; Total pins                      ; 15                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -182,25 +182,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 148         ;
+; Estimate of Logic utilization (ALMs needed) ; 135         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 274         ;
+; Combinational ALUT usage for logic          ; 232         ;
 ;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 21          ;
-;     -- 5 input functions                    ; 21          ;
-;     -- 4 input functions                    ; 16          ;
-;     -- <=3 input functions                  ; 216         ;
+;     -- 6 input functions                    ; 38          ;
+;     -- 5 input functions                    ; 7           ;
+;     -- 4 input functions                    ; 12          ;
+;     -- <=3 input functions                  ; 175         ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 179         ;
+; Dedicated logic registers                   ; 174         ;
 ;                                             ;             ;
 ; I/O pins                                    ; 15          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 179         ;
-; Total fan-out                               ; 1453        ;
-; Average fan-out                             ; 3.01        ;
+; Maximum fan-out                             ; 174         ;
+; Total fan-out                               ; 1386        ;
+; Average fan-out                             ; 3.18        ;
 +---------------------------------------------+-------------+
 
 
@@ -209,12 +209,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name    ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+----------------+--------------+
-; |Voting_Machine            ; 274 (1)             ; 179 (0)                   ; 0                 ; 0          ; 15   ; 0            ; |Voting_Machine                   ; Voting_Machine ; work         ;
-;    |buttonControl:bc1|     ; 40 (40)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc1 ; buttonControl  ; work         ;
-;    |buttonControl:bc2|     ; 40 (40)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc2 ; buttonControl  ; work         ;
-;    |buttonControl:bc3|     ; 40 (40)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc3 ; buttonControl  ; work         ;
-;    |buttonControl:bc4|     ; 40 (40)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc4 ; buttonControl  ; work         ;
-;    |modeControl:MC|        ; 77 (77)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|modeControl:MC    ; modeControl    ; work         ;
+; |Voting_Machine            ; 232 (0)             ; 174 (0)                   ; 0                 ; 0          ; 15   ; 0            ; |Voting_Machine                   ; Voting_Machine ; work         ;
+;    |buttonControl:bc1|     ; 37 (37)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc1 ; buttonControl  ; work         ;
+;    |buttonControl:bc2|     ; 37 (37)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc2 ; buttonControl  ; work         ;
+;    |buttonControl:bc3|     ; 37 (37)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc3 ; buttonControl  ; work         ;
+;    |buttonControl:bc4|     ; 37 (37)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|buttonControl:bc4 ; buttonControl  ; work         ;
+;    |modeControl:MC|        ; 48 (48)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|modeControl:MC    ; modeControl    ; work         ;
 ;    |voteLogger:VL|         ; 36 (36)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |Voting_Machine|voteLogger:VL     ; voteLogger     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -225,12 +225,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 179   ;
-; Number of registers using Synchronous Clear  ; 179   ;
+; Total registers                              ; 174   ;
+; Number of registers using Synchronous Clear  ; 174   ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 140   ;
+; Number of registers using Clock Enable       ; 162   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -244,11 +244,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Voting_Machine|voteLogger:VL|cand3_vote_recvd[7] ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Voting_Machine|voteLogger:VL|cand2_vote_recvd[7] ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Voting_Machine|voteLogger:VL|cand1_vote_recvd[7] ;
-; 4:1                ; 27 bits   ; 54 LEs        ; 0 LEs                ; 54 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc4|counter[1]      ;
-; 4:1                ; 27 bits   ; 54 LEs        ; 0 LEs                ; 54 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc3|counter[4]      ;
-; 4:1                ; 27 bits   ; 54 LEs        ; 0 LEs                ; 54 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc2|counter[2]      ;
-; 4:1                ; 27 bits   ; 54 LEs        ; 0 LEs                ; 54 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc1|counter[10]     ;
-; 4:1                ; 27 bits   ; 54 LEs        ; 27 LEs               ; 27 LEs                 ; Yes        ; |Voting_Machine|modeControl:MC|counter[22]        ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc4|counter[9]      ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc3|counter[4]      ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc2|counter[2]      ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |Voting_Machine|buttonControl:bc1|counter[9]      ;
+; 6:1                ; 26 bits   ; 104 LEs       ; 26 LEs               ; 78 LEs                 ; Yes        ; |Voting_Machine|modeControl:MC|counter[22]        ;
 ; 7:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |Voting_Machine|modeControl:MC|leds[2]            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
@@ -258,24 +258,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 179                         ;
-;     ENA SCLR          ; 140                         ;
-;     SCLR              ; 31                          ;
+; arriav_ff             ; 174                         ;
+;     ENA SCLR          ; 162                         ;
+;     SCLR              ; 4                           ;
 ;     SCLR SLD          ; 8                           ;
-; arriav_lcell_comb     ; 274                         ;
-;     arith             ; 167                         ;
-;         1 data inputs ; 163                         ;
+; arriav_lcell_comb     ; 232                         ;
+;     arith             ; 162                         ;
+;         1 data inputs ; 158                         ;
 ;         2 data inputs ; 4                           ;
-;     normal            ; 107                         ;
-;         2 data inputs ; 34                          ;
-;         3 data inputs ; 15                          ;
-;         4 data inputs ; 16                          ;
-;         5 data inputs ; 21                          ;
-;         6 data inputs ; 21                          ;
+;     normal            ; 70                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 12                          ;
+;         5 data inputs ; 7                           ;
+;         6 data inputs ; 38                          ;
 ; boundary_port         ; 15                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.60                        ;
-; Average LUT depth     ; 2.96                        ;
+; Max LUT depth         ; 3.50                        ;
+; Average LUT depth     ; 2.53                        ;
 +-----------------------+-----------------------------+
 
 
@@ -284,7 +284,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -294,7 +294,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Jul 03 22:48:38 2025
+    Info: Processing started: Fri Jul 04 12:44:38 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Voting_Machine -c Voting_Machine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -302,28 +302,29 @@ Info (12021): Found 4 design units, including 4 entities, in source file voting_
     Info (12023): Found entity 1: buttonControl File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 5
     Info (12023): Found entity 2: voteLogger File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 39
     Info (12023): Found entity 3: modeControl File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 74
-    Info (12023): Found entity 4: Voting_Machine File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 130
+    Info (12023): Found entity 4: Voting_Machine File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 140
 Info (12127): Elaborating entity "Voting_Machine" for the top level hierarchy
-Info (12128): Elaborating entity "buttonControl" for hierarchy "buttonControl:bc1" File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 158
-Warning (10230): Verilog HDL assignment warning at voting_machine.v(18): truncated value with size 32 to match size of target (27) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 18
-Info (12128): Elaborating entity "voteLogger" for hierarchy "voteLogger:VL" File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 193
+Warning (10036): Verilog HDL or VHDL warning at voting_machine.v(159): object "anyValidVote" assigned a value but never read File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 159
+Info (12128): Elaborating entity "buttonControl" for hierarchy "buttonControl:bc1" File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 168
+Warning (10230): Verilog HDL assignment warning at voting_machine.v(18): truncated value with size 32 to match size of target (26) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 18
+Info (12128): Elaborating entity "voteLogger" for hierarchy "voteLogger:VL" File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 203
 Warning (10230): Verilog HDL assignment warning at voting_machine.v(60): truncated value with size 32 to match size of target (8) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 60
 Warning (10230): Verilog HDL assignment warning at voting_machine.v(62): truncated value with size 32 to match size of target (8) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 62
 Warning (10230): Verilog HDL assignment warning at voting_machine.v(64): truncated value with size 32 to match size of target (8) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 64
 Warning (10230): Verilog HDL assignment warning at voting_machine.v(66): truncated value with size 32 to match size of target (8) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 66
-Info (12128): Elaborating entity "modeControl" for hierarchy "modeControl:MC" File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 209
-Warning (10230): Verilog HDL assignment warning at voting_machine.v(97): truncated value with size 32 to match size of target (27) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 97
+Info (12128): Elaborating entity "modeControl" for hierarchy "modeControl:MC" File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 218
+Warning (10230): Verilog HDL assignment warning at voting_machine.v(102): truncated value with size 32 to match size of target (26) File: C:/Users/anuka/Desktop/6th Sem/EE 6205 Hardware Description Language/Voting_Machine/FPGA/voting_machine.v Line: 102
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 289 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 247 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 274 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4874 megabytes
-    Info: Processing ended: Thu Jul 03 22:48:45 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:18
+    Info (21061): Implemented 232 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4903 megabytes
+    Info: Processing ended: Fri Jul 04 12:44:53 2025
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:39
 
 

@@ -52,15 +52,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "button4_n",
+					"strict" : false
+				},
+				{
 					"name" : "reset_n",
 					"strict" : false
 				},
 				{
 					"name" : "mode",
-					"strict" : false
-				},
-				{
-					"name" : "button4_n",
 					"strict" : false
 				}
 			]
